@@ -1,0 +1,7 @@
+npm install -g typescript
+
+
+tsc filename.ts
+filename.js file created automatically.
+
+node abc.js

@@ -1,0 +1,89 @@
+
+<div class="container">
+
+    <div class="row">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Add Employee id</span>
+            </div>
+            <input type="text" #employeeid (change)="0" class="form-control" placeholder="Enter Employee id" aria-label="Username" aria-describedby="basic-addon1">
+         </div>
+    </div>
+    <div class="row">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Add Employee first_name</span>
+            </div>
+            <input type="text" #employeefirst (change)="0" class="form-control" placeholder="Enter first_name" aria-label="Username" aria-describedby="basic-addon1">
+         </div>
+    </div>
+
+    <div class="row">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Add Employee last_name</span>
+            </div>
+            <input type="text" #employeelast (change)="0" class="form-control" placeholder="Enter first_name" aria-label="Username" aria-describedby="basic-addon1">
+         </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Add Employee email</span>
+            </div>
+            <input type="text" #employeeemail (change)="0" class="form-control" placeholder="Enter first_name" aria-label="Username" aria-describedby="basic-addon1">
+         </div>
+    </div>
+
+    <div class="row">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Add Employee gender</span>
+            </div>
+            <input type="text" #employeegender (change)="0" class="form-control" placeholder="Enter first_name" aria-label="Username" aria-describedby="basic-addon1">
+         </div>
+    </div>
+    <button type="button" class="btn btn-primary"
+     (click)="addEmployee(employeeid.value,employeefirst.value,employeelast.value,employeeemail.value,employeegender.value)">Add</button><hr/>
+    <div class="row">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Search Employee</span>
+            </div>
+            <input type="text" #search (keyup)="0" class="form-control" placeholder="Enter first_name" aria-label="Username" aria-describedby="basic-addon1">
+         </div>
+    </div>
+
+
+
+
+
+
+<div class="row"> 
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Email</th>
+            
+          </tr>
+        </thead>
+    </table>
+</div>
+
+  <div class="column">
+      <my-employee *ngFor="let employee of employees 
+       | searchEmployee:search.value;let i = index" id={{employee.id}}
+       first_name={{employee.first_name}} 
+       last_name={{employee.last_name}} 
+       email={{employee.email}} key={{i}} ></my-employee>
+  </div>
+
+    
+  
+</div>
